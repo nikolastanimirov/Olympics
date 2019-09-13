@@ -1,0 +1,164 @@
+<!doctype html>
+
+
+<html lang="en" class="no-js">
+<head>
+	<title>AUBG OLYMPICS</title>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">	
+	<link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/animate.css" media="screen">
+    <!-- REVOLUTION BANNER CSS SETTINGS -->
+	<link rel="stylesheet" type="text/css" href="css/settings.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+	<!-- Interactive map -->
+	
+    <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+	 <script src="http://maps.google.com/maps/api/js?key=AIzaSyBRi9fCSzyi2KF_ZIVmNd5Hwpa6Ztd5WTY" type="text/javascript"></script>
+     
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.migrate.js"></script>
+	<script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.imagesloaded.min.js"></script>
+  	<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
+	<script type="text/javascript" src="js/retina-1.1.0.min.js"></script>
+	<script type="text/javascript" src="js/plugins-scroll.js"></script>
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</head>
+<body>
+
+<div id="header"></div>
+<script> 
+$(function(){
+$("#header").load("header.html");
+});</script>
+		<!-- End Header -->
+
+		<!-- map 
+			================================================== -->
+		<div id="map2"></div>
+		<!-- map -->
+
+		<!-- contact section 
+			================================================== -->
+		<section class="contact-section">
+			<div class="container">
+				<div class="col-md-4">
+					<div class="contact-info">
+						<h2>Contact Info</h2>
+						<p>You can contact us in any of the numbers below!</p>
+						<ul class="information-list">
+							<li><i class="fa fa-map-marker"></i><span>12 Svoboda Bachvarova St. City. Blagoevgrad 2700, Bulgaria</span></li>
+							<li><i class="fa fa-phone"></i><span>President - Kiril Georgiev:</br>  +359 898800860</span><span>Vice President - Gala Yovcheva:</br>  + 359 883456300</span><span>Vice President - Dimitar Bratovanov:</br> +359 883398631</span><span>Treasurer - Aleksandra Dimitrova:</br>  +359 895779503</span></li>
+							<li><i class="fa fa-envelope-o"></i><span>aubgolympics@gmail.com</span></li>
+						</ul>						
+					</div>
+				</div>
+				<div class="col-md-8">
+					<form id="contact-form" action="contact.php" method="post">
+						<h2>Send us a message</h2>
+						<div class="row">
+							<div class="col-md-6">
+								<input name="name" id="name" type="text" placeholder="Name">
+							</div>
+							<div class="col-md-6">
+								<input name="mail" id="mail" type="text" placeholder="Email">
+							</div>
+							<div class="col-md-6">
+								<input name="subject" id="subject" type="text" placeholder="Subject">
+							</div>
+							<div class="col-md-6">
+								<input name="telephone" id="telephone" type="text" placeholder="Telephone">
+							</div>
+						</div>
+						<textarea name="comment" id="comment" placeholder="Message"></textarea>
+						<input type="submit" id="submit_contact" value="Send Message">
+						<div id="msg" class="message"></div>
+					</form>
+				</div>
+			</div>
+		</section>
+		<!-- End contact section -->
+
+		<!-- footer 
+			================================================== -->
+	<footer>
+			<p class="copyright">
+			</p>
+	</footer>
+		<!-- End footer -->
+
+	</div>
+	<!-- End Container -->
+
+<script>
+		// Interactive Map
+
+	 var locations = [
+      ['American University in Bulgaria', 42.012871, 23.095318, 1]
+	  ['Basketball',42.028933, 23.115010 , 2],
+	  ['Soccer',42.029632, 23.116915 , 3],
+	  ['Volleyball',42.029835, 23.116855 , 4],
+	  ['Tennis',42.029193, 23.115021, 5],
+	  ['Table Tennis',42.028950, 23.115354, 6],
+	  ['Dodgeball',42.029924, 23.116780, 7],
+	  ['100m Dash',42.029606, 23.115231, 8],
+	  ['4x100m Relay',42.029471, 23.114536, 9],
+	  ['Arm Wrestling',42.029722, 23.116142, 10],
+	  ['3-Point Shootout',42.028958, 23.115165, 11],
+	  ['Power Lifting',42.029806, 23.115992, 12],
+	  ['Skills Challenge',42.030037, 23.116786, 13],
+	  ['Tug of War',42.029980, 23.116185, 14],
+	  ['Award Ceremony',42.029308, 23.116123, 15],
+	  ['Lottery',42.029344, 23.116261, 16],
+	  ['Wall Climbing',42.029862, 23.115865, 17],
+	  ['Charity Games',42.029972, 23.116002, 18],
+	  ['Alumni Game',42.030029, 23.116442, 19],
+	  ['Demonstration',42.029390, 23.116442, 20],
+
+
+    ];
+ 
+    var map = new google.maps.Map(document.getElementById('map2'), {
+      zoom: 17,
+      center: new google.maps.LatLng(42.029519, 23.115758),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+ 
+    var infowindow = new google.maps.InfoWindow();
+ 
+    var marker, i;
+ 
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+ 
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+	</script>
+
+</body>
+</html>
